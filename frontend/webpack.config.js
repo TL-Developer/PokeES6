@@ -1,13 +1,20 @@
 const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const extractPlugin = new ExtractTextPlugin({
+  filename: 'style.css'
+})
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    './src/js/app.js'
+    './src/js/app.js',
+    './src/sass/style.scss'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/dist'
   },
   module: {
     rules: [{
@@ -15,12 +22,12 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
-        presets: ['env', 'stage-2']
+        presets: ['es2015', 'stage-2']
       }
     },
     {
       enforce: 'pre',
-      test: /\.jsx?$/,
+      test: /\.js?$/,
       loader: 'standard-loader',
       exclude: /(node_modules|bower_components)/,
       options: {
@@ -29,11 +36,12 @@ module.exports = {
     },
     {
       test: /\.scss$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'sass-loader'
-      ]
+      use: extractPlugin.extract({
+        use: ['css-loader', 'sass-loader']
+      })
     }]
-  }
+  },
+  plugins: [
+    extractPlugin
+  ]
 }

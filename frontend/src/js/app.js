@@ -1,9 +1,10 @@
-import { _ListPokemonsService } from './services/PokemonsService'
 import PokemonController from './controllers/PokemonsController'
+import { $ } from './helpers/$'
 
-// LISTAGEM DOS POKEMONS
 (() => {
-  _ListPokemonsService().then((pokemons) => (
-    PokemonController().listPokemons(pokemons)
-  ))
+  // LIST POKEMONS
+  PokemonController().listPokemons()
+
+  const $listPokemons = $('.im-pokemon', 'all')
+  console.log($listPokemons)
 })()
