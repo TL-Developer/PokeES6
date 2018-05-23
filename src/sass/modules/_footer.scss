@@ -1,0 +1,13 @@
+
+footer {
+  background: $blue;
+  @include size(100%, 150px);
+  position: absolute;
+  bottom: 0;
+
+  h5 {
+    text-align: center;
+    color: $gray;
+    @extend %center-v;
+  }
+}

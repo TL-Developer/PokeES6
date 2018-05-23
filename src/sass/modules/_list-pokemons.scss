@@ -1,0 +1,11 @@
+
+.list-pokemons {
+
+  ul {
+    @extend %no-bullets;
+
+    li {
+      border: 1px solid $gray2;
+    }
+  }
+}

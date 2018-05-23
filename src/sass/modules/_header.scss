@@ -1,0 +1,11 @@
+
+header {
+  background: $blue;
+  @include size(100%, 50px);
+
+  h3 {
+    text-align: center;
+    color: $white;
+    padding-top: 1%;
+  }
+}
