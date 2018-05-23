@@ -10,3 +10,18 @@
   -o-transform: translateY($Y);
   transform: translateY($Y);
 }
+
+@mixin border-radius($topLeft, $topRight, $bottomLeft, $bottomRight) {
+  border-top-left-radius: $topLeft;
+  border-top-right-radius: $topRight;
+  border-bottom-left-radius: $bottomLeft;
+  border-bottom-right-radius: $bottomRight;
+}
+
+@mixin border($top, $left, $right, $bottom) {
+  border-top: $top;
+  border-left: $left;
+  border-right: $right;
+  border-bottom: $bottom;
+  border-top: $top;
+}

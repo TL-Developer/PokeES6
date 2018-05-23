@@ -1,3 +1,3 @@
-export default class PokemonsController {
-  list () {}
+const _ListPokemonsController = (pokemons) => {
+  _RenderListPokemons(pokemons)
 }

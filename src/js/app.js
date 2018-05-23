@@ -1,3 +1,5 @@
-import listPokemons from './services/PokemonsService'
-
-console.log(listPokemons)
+const init = async () => {
+  const pokemons = await _ListPokemonsService(24, 0)
+  _ListPokemonsController(pokemons)
+}
+init()

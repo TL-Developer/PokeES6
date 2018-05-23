@@ -8,37 +8,17 @@
 <body>
   <!-- HEADER -->
   <header>
-    <h3>.:: PokeLima ::.</h3>
+    <div class="pull-left m-top10 m-left10">
+      <h3>.:: PokeLima ::.</h3>
+    </div>
+    <div class="search pull-right m-right10 m-top10">
+      <input type="text" placeholder="Search pokemon for name...">
+    </div>
   </header>
 
   <!-- CONTENT -->
   <section class="list-pokemons">
-    <ul class="fx fx-just-center fx-wrap fx-just-baseline fx-box-sizing-border-box">
-      <li class="fx-calc">
-        <img src="" alt="">
-        <p>charmander</p>
-      </li>
-      <li class="fx-calc">
-        <img src="" alt="">
-        <p>charmander</p>
-      </li>
-      <li class="fx-calc">
-        <img src="" alt="">
-        <p>charmander</p>
-      </li>
-      <li class="fx-calc">
-        <img src="" alt="">
-        <p>charmander</p>
-      </li>
-      <li class="fx-calc">
-        <img src="" alt="">
-        <p>charmander</p>
-      </li>
-      <li class="fx-calc">
-        <img src="" alt="">
-        <p>charmander</p>
-      </li>
-    </ul>
+    <ul class="fx fx-just-center fx-wrap fx-just-baseline fx-box-sizing-border-box"></ul>
   </section>
 
   <!-- FOOTER -->
@@ -46,6 +26,9 @@
     <h5>By: Tiago Lima</h5>
   </footer>
 
+  <script src="js/services/PokemonsService.js"></script>
+  <script src="js/controllers/PokemonsController.js"></script>
+  <script src="js/views/_PokemonsView.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
