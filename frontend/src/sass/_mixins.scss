@@ -18,10 +18,12 @@
   border-bottom-right-radius: $bottomRight;
 }
 
-@mixin border($top, $left, $right, $bottom) {
+@mixin border($top, $left, $right, $bottom, $style, $color) {
   border-top: $top;
   border-left: $left;
   border-right: $right;
   border-bottom: $bottom;
   border-top: $top;
+  border-style: $style;
+  border-color: $color;
 }

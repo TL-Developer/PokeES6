@@ -1,0 +1,4 @@
+.pokemon-detail {
+  @include border-radius(15px, 0px, 0px, 15px);
+  @include border(1px, 1px, 1px, 1px, solid, $gray2);
+}

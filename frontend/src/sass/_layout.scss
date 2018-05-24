@@ -3,6 +3,10 @@
     "layout/media-queries"
     ;
 
+.width-50 {
+  width: 50%;
+}
+
 .m-top10 {
   margin-top: 10px;
 }
@@ -31,7 +35,7 @@
   margin: 0;
   padding: 3px;
   @include border-radius(5px, 5px, 5px, 5px);
-  @include border(0, 0, 0, 0);
+  @include border(0, 0, 0, 0, solid, transparent);
   box-shadow: none;
   height: 50px;
 }
