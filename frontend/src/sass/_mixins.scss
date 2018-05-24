@@ -27,3 +27,8 @@
   border-style: $style;
   border-color: $color;
 }
+
+@mixin font-face($name, $url) {
+  font-family: $name;
+  src: url($url) format("truetype");
+}

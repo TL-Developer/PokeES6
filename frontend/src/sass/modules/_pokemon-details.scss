@@ -1,4 +1,19 @@
 .pokemon-detail {
-  @include border-radius(15px, 0px, 0px, 15px);
-  @include border(1px, 1px, 1px, 1px, solid, $gray2);
+  width: 45%;
+
+  .pokemon {
+    @include border(1px, 1px, 1px, 1px, solid, $gray2);
+    @include border-radius(0px, 35px, 35px, 0px);
+    height: 39vw;
+    background: $white;
+
+    .pokemon-name {
+
+      h1 {
+        color: $orange1;
+        font-size: 5vw;
+        font-family: $font3;
+      }
+    }
+  }
 }
