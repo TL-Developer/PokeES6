@@ -1,10 +1,6 @@
-import PokemonController from './controllers/PokemonsController'
-import { $ } from './helpers/$'
+import PokemonsController from './controllers/PokemonsController'
 
 (() => {
   // LIST POKEMONS
-  PokemonController().listPokemons()
-
-  const $listPokemons = $('.im-pokemon', 'all')
-  console.log($listPokemons)
+  PokemonsController().listPokemons()
 })()

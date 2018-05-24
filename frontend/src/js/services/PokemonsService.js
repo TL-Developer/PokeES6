@@ -9,5 +9,5 @@ export async function list (limit, offset) {
 export async function get (pokemonId) {
   const response = await fetch(`${uri}/${pokemonId}`)
   const data = await response.json()
-  return data.results
+  return data
 }
