@@ -1,0 +1,25 @@
+.arrows {
+  display: none;
+  position: relative;
+
+  .before-page {
+    opacity: .3;
+  }
+
+  .before-page-block, .next-page-block {
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    z-index: 2;
+    display: none;
+  }
+
+  .before-page-block {
+    left: 0;
+    display: block;
+  }
+
+  .next-page-block {
+    right: 0;
+  }
+}

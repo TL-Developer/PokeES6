@@ -5,16 +5,19 @@ export function RenderListPokemons (pokemons) {
   const $loadingListPokemons = $('.list-pokemons .loading')
   const $loadingPokemon = $('.pokemon-detail .loading')
   const $listPokemons = $('.list-pokemons ul')
+  const $arrows = $('.arrows')
 
   $loadingListPokemons.style.display = 'none'
 
+  const regexGetIdPokemon = /(?<=\/)(\d+)/g
   let renderTemplate = (url, name) => (`
-      <li class="hover-grow pokemon fx-calc text-center cursor-pointer" id="${url.substr(-3).replace(/\//g, '')}">
+      <li class="hover-grow pokemon fx-calc text-center cursor-pointer" id="${url.match(regexGetIdPokemon)}">
         <p>${name}</p>
       </li>
     `
   )
 
+  $listPokemons.innerHTML = ''
   pokemons.filter((pokemon, index) => {
     $listPokemons.insertAdjacentHTML('beforeend', renderTemplate(pokemon.url, pokemon.name))
   })
@@ -23,7 +26,6 @@ export function RenderListPokemons (pokemons) {
   const $pokemons = $('.pokemon', 'all')
   $pokemons.forEach((pokemon) => {
     pokemon.addEventListener('click', (e) => {
-      $loadingPokemon.style.display = 'block'
       if (e.target.id) {
         PokemonsController().getPokemon(e.target.id)
       }
@@ -32,6 +34,8 @@ export function RenderListPokemons (pokemons) {
       }
     })
   })
+
+  $arrows.style.display = 'block'
 }
 
 export function RenderPokemon (pokemon) {
