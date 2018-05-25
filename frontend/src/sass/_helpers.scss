@@ -8,6 +8,12 @@
   @include translateY(-50%);
 }
 
+%center-h {
+  position: relative;
+  left: 50%;
+  @include translateX(-50%);
+}
+
 %clearfix {
   &::before,
   &::after {

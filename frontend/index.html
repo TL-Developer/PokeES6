@@ -21,6 +21,9 @@
   <section>
     <article class="list-pokemons m-top10 pull-left">
       <h1 class="text-center m-top10 m-bottom10 font-pokemon-solid text-color-blue">Pokemons</h1>
+      <div class="loading">
+        <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
+      </div>
       <ul class="fx fx-just-center fx-wrap fx-just-baseline fx-box-sizing-border-box"></ul>
     </article>
 
@@ -28,7 +31,13 @@
     <article class="box-pokemon-detail pull-right m-right20 m-top10">
       <h1 class="text-center m-top10 m-bottom10 font-pokemon-solid text-color-blue">Details</h1>
 
-      <section class="pokemon-detail pull-left"></section>
+      <section class="pokemon-detail pull-left">
+        <div class="loading">
+          <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
+        </div>
+
+        <div class="render-pokemon"></div>
+      </section>
     </article>
   </section>
 

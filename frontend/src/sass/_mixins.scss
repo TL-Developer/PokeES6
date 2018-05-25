@@ -11,6 +11,14 @@
   transform: translateY($Y);
 }
 
+@mixin translateX($X) {
+  -webkit-transform: translateX($X);
+  -moz-transform: translateX($X);
+  -ms-transform: translateX($X);
+  -o-transform: translateX($X);
+  transform: translateX($X);
+}
+
 @mixin border-radius($topLeft, $topRight, $bottomLeft, $bottomRight) {
   border-top-left-radius: $topLeft;
   border-top-right-radius: $topRight;

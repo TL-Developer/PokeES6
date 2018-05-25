@@ -2,7 +2,11 @@ import { $ } from '../helpers/$'
 
 export function RenderListPokemons (pokemons) {
   const PokemonsController = require('../controllers/PokemonsController')
-  const $listPokemons = document.querySelector('.list-pokemons ul')
+  const $loadingListPokemons = $('.list-pokemons .loading')
+  const $loadingPokemon = $('.pokemon-detail .loading')
+  const $listPokemons = $('.list-pokemons ul')
+
+  $loadingListPokemons.style.display = 'none'
 
   let renderTemplate = (url, name) => (`
       <li class="hover-grow pokemon fx-calc text-center cursor-pointer" id="${url.substr(-3).replace(/\//g, '')}">
@@ -19,6 +23,7 @@ export function RenderListPokemons (pokemons) {
   const $pokemons = $('.pokemon', 'all')
   $pokemons.forEach((pokemon) => {
     pokemon.addEventListener('click', (e) => {
+      $loadingPokemon.style.display = 'block'
       if (e.target.id) {
         PokemonsController().getPokemon(e.target.id)
       }
@@ -30,7 +35,10 @@ export function RenderListPokemons (pokemons) {
 }
 
 export function RenderPokemon (pokemon) {
-  const $pokemon = document.querySelector('.pokemon-detail')
+  const $pokemon = $('.pokemon-detail .render-pokemon')
+  const $loading = $('.pokemon-detail .loading')
+
+  $loading.style.display = 'none'
 
   let renderTemplate = () => (
     `
