@@ -10,3 +10,23 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-color-blue {
+  color: $blue;
+}
+
+.font-pokemon-hollow {
+  font-family: $font3;
+}
+
+.font-pokemon-solid {
+  font-family: $font4;
+}
