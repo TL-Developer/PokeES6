@@ -2,6 +2,7 @@
   width: 45%;
 
   .pokemon {
+    padding: 5%;
     @include border(1px, 1px, 1px, 1px, solid, $gray2);
     @include border-radius(0px, 35px, 35px, 0px);
     height: 39vw;
@@ -13,6 +14,16 @@
         color: $orange1;
         font-size: 5vw;
       }
+    }
+
+    picture:first-child {
+      background: $pink1;
+      @include border-radius(0px, 0px, 35px, 0px);
+    }
+
+    picture:last-child {
+      background: $pink2;
+      @include border-radius(0px, 35px, 0px, 0px);
     }
   }
 }
