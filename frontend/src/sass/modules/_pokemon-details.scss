@@ -1,7 +1,7 @@
-.pokemon-detail {
+.box-pokemon-detail {
   width: 45%;
 
-  .pokemon {
+  .pokemon-detail {
     padding: 5%;
     @include border(1px, 1px, 1px, 1px, solid, $gray2);
     @include border-radius(0px, 35px, 35px, 0px);
