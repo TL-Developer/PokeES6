@@ -30,3 +30,12 @@ h1, h2, h3, h4, h5 {
 .font-pokemon-solid {
   font-family: $font4;
 }
+
+.input-text {
+  margin: 0;
+  padding: 3px;
+  @include border-radius(5px, 5px, 5px, 5px);
+  @include border(0, 0, 0, 0, solid, transparent);
+  box-shadow: none;
+  height: 50px;
+}
