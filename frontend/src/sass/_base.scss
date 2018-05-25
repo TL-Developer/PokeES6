@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: $gray;
+  font-family: $font1;
 }
 
 h1, h2, h3, h4, h5 {
@@ -23,6 +24,34 @@ h1, h2, h3, h4, h5 {
   color: $blue;
 }
 
+.text-color-red-1 {
+  color: $red1;
+}
+
+.text-color-gray-1 {
+  color: $gray;
+}
+
+.text-color-pallet-1 {
+  color: $pallet-1;
+}
+
+.text-color-pallet-2 {
+  color: $pallet-2;
+}
+
+.text-color-pallet-3 {
+  color: $pallet-3;
+}
+
+.text-color-pallet-4 {
+  color: $pallet-4;
+}
+
+.text-color-pallet-4 {
+  color: $pallet-4;
+}
+
 .font-pokemon-hollow {
   font-family: $font3;
 }
@@ -38,4 +67,16 @@ h1, h2, h3, h4, h5 {
   @include border(0, 0, 0, 0, solid, transparent);
   box-shadow: none;
   height: 50px;
+}
+
+.letter-spacing-5 {
+  letter-spacing: 5px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 3px;
 }

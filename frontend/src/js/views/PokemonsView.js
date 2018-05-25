@@ -36,30 +36,32 @@ export function RenderListPokemons (pokemons) {
 
 export function RenderPokemon (pokemon) {
   const $pokemon = $('.pokemon-detail .render-pokemon')
+  const $changePokemon = $('.choose-pokemon')
   const $loading = $('.pokemon-detail .loading')
 
   $loading.style.display = 'none'
+  $changePokemon.style.display = 'none'
 
   let renderTemplate = () => (
     `
       <div class="row pokemon-name">
-        <h1 class="text-center m-bottom20 font-pokemon-hollow">${pokemon.name}</h1>
+        <h1 class="roll text-color-pallet-4 animated text-center m-bottom20 font-pokemon-hollow">${pokemon.name}</h1>
       </div>
 
       <div class="row pull-left">
-        <picture class="text-center pull-left">
+        <picture class="flipH animated text-center pull-left">
           <img class="width-100" src="${pokemon.sprites.front_default}" alt="pokemon-front">
         </picture>
 
-        <picture class="text-center pull-right">
+        <picture class="flipH animated text-center pull-right">
           <img class="width-100" src="${pokemon.sprites.back_default}" alt="pokemon-back">
         </picture>
       </div>
 
       <div class="row text-center m-top10 pull-left">
-        <p><small>Weight:</small> <i class="font-pokemon-hollow">${pokemon.weight}</i></p>
-        <p><small>Experience:</small> <i class="font-pokemon-hollow">${pokemon.base_experience}</i></p>
-        <p><small>Height:</small> <i class="font-pokemon-hollow">${pokemon.height}</i></p>
+        <h2><small>Weight:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.weight}</i></h2>
+        <h2><small>Experience:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.base_experience}</i></h2>
+        <h2><small>Height:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.height}</i></h2>
       </div>
     `
   )

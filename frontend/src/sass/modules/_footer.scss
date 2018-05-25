@@ -1,8 +1,8 @@
 
 footer {
-  background: $blue;
-  @include size(100%, 50px);
-  position: absolute;
+  background: $pallet-3;
+  @include size(100%, 20px);
+  position: fixed;
   bottom: 0;
 
   h5 {

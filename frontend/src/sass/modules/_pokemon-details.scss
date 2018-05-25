@@ -6,30 +6,37 @@
     padding: 5%;
     @include border(1px, 1px, 1px, 1px, solid, $gray2);
     @include border-radius(0px, 35px, 35px, 0px);
-    width: 80%;
+    width: 90%;
     background: $white;
     min-height: 390px;
+
+    .choose-pokemon {
+      @extend %center-v;
+      @extend %center-h;
+      position: absolute;
+      top: 20%;
+
+      h1 {
+        font-size: 5vw;
+      }
+
+      img.character {
+        position: absolute;
+        right: -44%;
+        bottom: -54%;
+        width: 75%;
+      }
+    }
 
     .pokemon-name {
 
       h1 {
-        color: $orange1;
         font-size: 5vw;
       }
     }
 
     picture {
       width: 40%;
-    }
-
-    picture:first-child {
-      background: $pink1;
-      @include border-radius(0px, 0px, 35px, 0px);
-    }
-
-    picture:last-child {
-      background: $pink2;
-      @include border-radius(0px, 35px, 0px, 0px);
     }
   }
 }
