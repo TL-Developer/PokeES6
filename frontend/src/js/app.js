@@ -35,7 +35,7 @@ import { $ } from './helpers/$'
     }
   })
 
-  // FIND POKEMON FOR NAME
+  // SEARCH POKEMON FOR NAME
   $search.addEventListener('keyup', (e) => {
     if (e.code === 'Enter') {
       PokemonsController().searchPokemon($search.value)
