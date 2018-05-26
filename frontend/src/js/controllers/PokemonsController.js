@@ -9,14 +9,14 @@ module.exports = () => {
 
   controller.listPokemons = (limit, offset) => {
     $loadingListPokemons.style.display = 'block'
-    PokemonsService.list(limit, offset).then((pokemons) => (
+    PokemonsService.listPokemons(limit, offset).then((pokemons) => (
       RenderListPokemons(pokemons)
     ))
   }
 
   controller.getPokemon = (pokemonId) => {
     $loadingPokemonDetail.style.display = 'block'
-    PokemonsService.get(pokemonId).then((pokemon) => (
+    PokemonsService.getPokemon(pokemonId).then((pokemon) => (
       RenderPokemon(pokemon)
     ))
   }
