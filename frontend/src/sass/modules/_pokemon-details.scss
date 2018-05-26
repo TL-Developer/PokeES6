@@ -10,6 +10,10 @@
     background: $white;
     min-height: 390px;
 
+    .pokemon-card {
+      display: block;
+    }
+
     .pokemon-art {
       display: none;
     }

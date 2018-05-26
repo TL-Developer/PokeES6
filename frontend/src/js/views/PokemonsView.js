@@ -87,8 +87,7 @@ export function RenderPokemon (pokemon) {
 
   $changeViewCard.style.display = 'block'
   $changeViewCard.addEventListener('click', () => {
-
-    if ($pokemonCard.style.display == 'block') {
+    if ($pokemonCard.style.display !== 'none') {
       $pokemonArt.style.display = 'block'
       $pokemonCard.style.display = 'none'
     }else {
