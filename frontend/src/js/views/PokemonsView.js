@@ -42,19 +42,26 @@ export function RenderPokemon (pokemon) {
   const $pokemon = $('.pokemon-detail .render-pokemon')
   const $changePokemon = $('.choose-pokemon')
   const $loading = $('.pokemon-detail .loading')
+  const $changeViewCard = $('.change-view-card')
 
   $loading.style.display = 'none'
   $changePokemon.style.display = 'none'
 
+  const uriPokemonArt = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork'
   let renderTemplate = () => (
     `
       <div class="row pokemon-name">
         <h1 class="roll text-color-pallet-4 animated text-center m-bottom20 font-pokemon-hollow">${pokemon.name}</h1>
       </div>
 
-      <div class="row pull-left">
+      <div class="row text-center pull-left pokemon-art">
+        <picture>
+          <img class="flipH animated width-40" src="${uriPokemonArt}/${pokemon.id}.png" alt="pokemon-front">
+        </picture>
+      </div>
+
+      <div class="row pull-left pokemon-card">
         <picture class="flipH animated text-center pull-left">
-          <img class="width-100 pokemon-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/${pokemon.id}.png" alt="pokemon-front">
           <img class="width-100" src="${pokemon.sprites.front_default}" alt="pokemon-front">
         </picture>
 
@@ -73,4 +80,20 @@ export function RenderPokemon (pokemon) {
   )
 
   $pokemon.innerHTML = renderTemplate()
+
+  // CHANGE CARD VIEW
+  const $pokemonArt = $('.pokemon-art')
+  const $pokemonCard = $('.pokemon-card')
+
+  $changeViewCard.style.display = 'block'
+  $changeViewCard.addEventListener('click', () => {
+
+    if ($pokemonCard.style.display == 'block') {
+      $pokemonArt.style.display = 'block'
+      $pokemonCard.style.display = 'none'
+    }else {
+      $pokemonArt.style.display = 'none'
+      $pokemonCard.style.display = 'block'
+    }
+  })
 }

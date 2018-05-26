@@ -7,7 +7,6 @@
 </head>
 <body>
   <!-- HEADER -->
-  <CcHeader></CcHeader>
   <header>
     <div class="pull-left m-top10 m-left10">
       <h3>.:: PokeLima ::.</h3>
@@ -18,9 +17,9 @@
   </header>
 
   <!-- CONTENT LIST POKEMONS-->
-  <section>
+  <section class="m-bottom20">
     <article class="list-pokemons m-top10 pull-left">
-      <h1 class="text-center m-top10 m-bottom10 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Choose your pokemon</h1>
+      <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Choose your pokemon</h1>
       <div class="loading">
         <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
       </div>
@@ -37,9 +36,13 @@
 
     <!-- CONTENT POKEMON DETAIL -->
     <article class="box-pokemon-detail pull-right m-right20 m-top10">
-      <h1 class="text-center m-top10 m-bottom10 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Details of your pokemon</h1>
+      <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Details of your pokemon</h1>
 
       <section class="pokemon-detail pull-left">
+        <div class="change-view-card cursor-pointer">
+          <p class="text-color-blue">Change view pokemon</p>
+        </div>
+
         <div class="loading">
           <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
         </div>
