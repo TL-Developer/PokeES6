@@ -1,6 +1,7 @@
 const uriAllPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=1000'
 const uriPokemon = 'https://pokeapi.co/api/v2/pokemon'
 const uriPokemonType = 'https://pokeapi.co/api/v2/ability'
+const localforage = require('localforage')
 
 export async function listAllPokemons () {
   const response = await fetch(`${uriAllPokemon}`)

@@ -1,11 +1,13 @@
 import * as PokemonsService from '../services/PokemonsService'
 import { RenderListPokemons, RenderPokemon } from '../views/PokemonsView'
 import { $ } from '../helpers/$'
+const localforage = require('localforage')
 
 module.exports = () => {
   const controller = {}
   const $loadingListPokemons = $('.list-pokemons .loading')
   const $loadingPokemonDetail = $('.pokemon-detail .loading')
+  const $pokemonNotFound = $('.pokemon-not-found')
 
   controller.listPokemons = (limit, offset) => {
     $loadingListPokemons.style.display = 'block'
@@ -18,13 +20,13 @@ module.exports = () => {
         if (err) {
           throw new Error(err)
         }
-        console.log(pokemons)
         RenderListPokemons(pokemons)
       })
     })
   }
 
   controller.getPokemon = (pokemonId) => {
+    $pokemonNotFound.style.display = 'none'
     $loadingPokemonDetail.style.display = 'block'
     PokemonsService.getPokemon(pokemonId).then((pokemon) => (
       RenderPokemon(pokemon)
@@ -35,7 +37,6 @@ module.exports = () => {
         if (err) {
           throw new Error(err)
         }
-        console.log(pokemon)
         RenderPokemon(pokemon)
       })
     })
@@ -45,12 +46,19 @@ module.exports = () => {
     const regexGetIdPokemon = /(?<=\/)(\d+)/g
 
     $loadingPokemonDetail.style.display = 'block'
+    $pokemonNotFound.style.display = 'none'
     PokemonsService.listAllPokemons().then((pokemons) => (
-      [...pokemons].filter((pokemon) => {
+      [...pokemons].every((pokemon, index) => {
         if (pokemon.name === query) {
           PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
             RenderPokemon(pokemon)
           ))
+          $pokemonNotFound.style.display = 'none'
+          return false
+        }else {
+          $loadingPokemonDetail.style.display = 'none'
+          $pokemonNotFound.style.display = 'block'
+          return true
         }
       })
     )).catch(() => {
@@ -59,7 +67,7 @@ module.exports = () => {
           throw new Error(err)
         }
 
-        console.log(pokemons)
+        // console.log(pokemons)
       })
     })
   }
