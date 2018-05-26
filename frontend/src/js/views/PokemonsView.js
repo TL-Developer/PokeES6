@@ -54,6 +54,7 @@ export function RenderPokemon (pokemon) {
 
       <div class="row pull-left">
         <picture class="flipH animated text-center pull-left">
+          <img class="width-100 pokemon-art" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/${pokemon.id}.png" alt="pokemon-front">
           <img class="width-100" src="${pokemon.sprites.front_default}" alt="pokemon-front">
         </picture>
 
@@ -63,6 +64,7 @@ export function RenderPokemon (pokemon) {
       </div>
 
       <div class="row text-center m-top10 pull-left">
+        <h2><small>Type:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.types[0].type.name}</i></h2>
         <h2><small>Weight:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.weight}</i></h2>
         <h2><small>Experience:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.base_experience}</i></h2>
         <h2><small>Height:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.height}</i></h2>

@@ -10,6 +10,10 @@
     background: $white;
     min-height: 390px;
 
+    .pokemon-art {
+      display: none;
+    }
+
     .choose-pokemon {
       @extend %center-v;
       @extend %center-h;
