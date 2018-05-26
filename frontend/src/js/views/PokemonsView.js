@@ -3,7 +3,6 @@ import { $ } from '../helpers/$'
 export function RenderListPokemons (pokemons) {
   const PokemonsController = require('../controllers/PokemonsController')
   const $loadingListPokemons = $('.list-pokemons .loading')
-  const $loadingPokemon = $('.pokemon-detail .loading')
   const $listPokemons = $('.list-pokemons ul')
   const $arrows = $('.arrows')
 
@@ -28,8 +27,7 @@ export function RenderListPokemons (pokemons) {
     pokemon.addEventListener('click', (e) => {
       if (e.target.id) {
         PokemonsController().getPokemon(e.target.id)
-      }
-      else {
+      } else {
         PokemonsController().getPokemon(e.target.parentNode.id)
       }
     })
@@ -90,7 +88,7 @@ export function RenderPokemon (pokemon) {
     if ($pokemonCard.style.display !== 'none') {
       $pokemonArt.style.display = 'block'
       $pokemonCard.style.display = 'none'
-    }else {
+    } else {
       $pokemonArt.style.display = 'none'
       $pokemonCard.style.display = 'block'
     }

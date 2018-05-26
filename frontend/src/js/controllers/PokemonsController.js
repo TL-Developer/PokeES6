@@ -55,7 +55,7 @@ module.exports = () => {
           ))
           $pokemonNotFound.style.display = 'none'
           return false
-        }else {
+        } else {
           $loadingPokemonDetail.style.display = 'none'
           $pokemonNotFound.style.display = 'block'
           return true

@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch'
 const uriAllPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=1000'
 const uriPokemon = 'https://pokeapi.co/api/v2/pokemon'
 const uriPokemonType = 'https://pokeapi.co/api/v2/ability'
@@ -11,7 +12,7 @@ export async function listAllPokemons () {
 }
 
 export async function listPokemons (limit, offset) {
-  const response = await fetch(`${uriPokemon}/?limit=${limit ? limit : '21'}&offset=${offset ? offset : '0'}`)
+  const response = await fetch(`${uriPokemon}/?limit=${limit || '21'}&offset=${offset || '0'}`)
   const data = await response.json()
   localforage.setItem('pokemons', data.results)
   return data.results
