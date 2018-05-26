@@ -45,7 +45,7 @@ export function RenderPokemon (pokemon) {
   $loading.style.display = 'none'
   $changePokemon.style.display = 'none'
 
-  const uriPokemonArt = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork'
+  const uriPokemonArt = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'
   let renderTemplate = () => (
     `
       <div class="row pokemon-name">
@@ -54,17 +54,17 @@ export function RenderPokemon (pokemon) {
 
       <div class="row text-center pull-left pokemon-art">
         <picture>
-          <img class="flipH animated width-40" src="${uriPokemonArt}/${pokemon.id}.png" alt="pokemon-front">
+          <img class="flipH animated width-40" src="${uriPokemonArt + pokemon.id + '.png'}" alt="pokemon-front">
         </picture>
       </div>
 
       <div class="row pull-left pokemon-card">
         <picture class="flipH animated text-center pull-left">
-          <img class="width-100" src="${pokemon.sprites.front_default}" alt="pokemon-front">
+          <img class="width-100" src="${pokemon.sprites.front_default || './static/no-pokemon.jpg'}" alt="pokemon-front">
         </picture>
 
         <picture class="flipH animated text-center pull-right">
-          <img class="width-100" src="${pokemon.sprites.back_default}" alt="pokemon-back">
+          <img class="width-100" src="${pokemon.sprites.back_default || './static/no-pokemon.jpg'}" alt="pokemon-back">
         </picture>
       </div>
 
@@ -78,6 +78,12 @@ export function RenderPokemon (pokemon) {
   )
 
   $pokemon.innerHTML = renderTemplate()
+
+  // HANLDE ERROR IMAGE ART POKEMON
+  $('.pokemon-art picture img').onerror = function () {
+    this.src = './static/no-pokemon.jpg'
+    throw new Error('Não existe esta imagem no servidor, so sorry :( ')
+  }
 
   // CHANGE CARD VIEW
   const $pokemonArt = $('.pokemon-art')

@@ -6,6 +6,7 @@ import { $ } from './helpers/$'
   const $beforePage = $('.before-page')
   const $beforePageBlock = $('.before-page-block')
   const $nextPage = $('.next-page')
+  const $nextPageBlock = $('.next-page-block')
   const $search = $('.search input')
 
   // VARS TO PAGINATE
@@ -23,6 +24,11 @@ import { $ } from './helpers/$'
       $beforePage.setAttribute('style', 'opacity: .3;')
       $beforePageBlock.setAttribute('style', 'display: block;')
     }
+
+    if (page < 40) {
+      $nextPage.setAttribute('style', 'opacity: 1;')
+      $nextPageBlock.setAttribute('style', 'display: none;')
+    }
   })
 
   // NEXT LIST POKEMONS
@@ -32,6 +38,11 @@ import { $ } from './helpers/$'
     if (page > 0) {
       $beforePage.setAttribute('style', 'opacity: 1;')
       $beforePageBlock.setAttribute('style', 'display: none;')
+    }
+
+    if (page === 40) {
+      $nextPage.setAttribute('style', 'opacity: .3;')
+      $nextPageBlock.setAttribute('style', 'display: block;')
     }
   })
 
