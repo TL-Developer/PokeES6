@@ -36,7 +36,25 @@
   border-color: $color;
 }
 
+@mixin outline($top, $left, $right, $bottom, $style, $color) {
+  outline-top: $top;
+  outline-left: $left;
+  outline-right: $right;
+  outline-bottom: $bottom;
+  outline-top: $top;
+  outline-style: $style;
+  outline-color: $color;
+}
+
 @mixin font-face($name, $url) {
   font-family: $name;
   src: url($url) format("truetype");
+}
+
+@mixin transition($prop, $time, $animation) {
+  -webkit-transition: $prop $time $animation;
+  -moz-transition: $prop $time $animation;
+  -ms-transition: $prop $time $animation;
+  -o-transition: $prop $time $animation;
+  transition: $prop $time $animation;
 }

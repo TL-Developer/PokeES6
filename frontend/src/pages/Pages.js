@@ -3,6 +3,7 @@ import PokemonsController from '../js/controllers/PokemonsController'
 export function Home () {
   setTimeout(() => {
     PokemonsController().listPokemons()
+    PokemonsController().createPaginationAndSearch()
   }, 10)
   return `
     <article class="list-pokemons m-top10 pull-left">
@@ -25,6 +26,15 @@ export function Home () {
     <article class="box-pokemon-detail pull-right m-right20 m-top10">
       <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Details of your pokemon</h1>
 
+      <div class="row">
+        <div class="search m-bottom5">
+          <input class="input-text font-pokemon-solid letter-spacing-2 text-color-gray-2" type="text" placeholder="Search pokemon for name...">
+        </div>
+        <section class="pokemon-not-found m-bottom5 row">
+          <h6 class="text-center heart animated infinite no-padding no-margin text-color-pallet-3">Pokemon não encontrado</h6>
+        </section>
+      </div>
+
       <section class="pokemon-detail pull-left">
         <div class="change-view-card cursor-pointer">
           <p class="text-color-blue">Change view pokemon</p>
@@ -40,10 +50,6 @@ export function Home () {
         </div>
 
         <div class="render-pokemon"></div>
-      </section>
-
-      <section class="pokemon-not-found row m-top20 pull-left">
-        <h2 class="text-center heart animated infinite text-color-pallet-3">Pokemon não encontrado</h2>
       </section>
     </article>
   `

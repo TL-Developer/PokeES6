@@ -2,6 +2,7 @@
 header {
   background: $pallet-3;
   @include size(100%, 50px);
+  overflow: hidden;
 
   h3 {
     text-align: center;
@@ -9,7 +10,21 @@ header {
     padding-top: 1%;
   }
 
-  .search {
+  ul.list {
+    height: 100%;
 
+    li {
+      padding: 12% 15% 8% 8%;
+      float: left;
+      height: 100%;
+      cursor: pointer;
+      @include transition(all, .5s, ease);
+      color: $white;
+
+      &:hover {
+        background: $white;
+        color: $pallet-3;
+      }
+    }
   }
 }

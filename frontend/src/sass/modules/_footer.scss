@@ -1,13 +1,13 @@
 
 footer {
-  background: $pallet-3;
   @include size(100%, 20px);
   position: fixed;
   bottom: 0;
 
   h5 {
     text-align: center;
-    color: $gray;
+    color: $gray2;
+    font-size: .8vw;
     @extend %center-v;
   }
 }

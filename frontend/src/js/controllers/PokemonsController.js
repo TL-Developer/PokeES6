@@ -9,6 +9,57 @@ module.exports = () => {
   const $loadingPokemonDetail = $('.pokemon-detail .loading')
   const $pokemonNotFound = $('.pokemon-not-found')
 
+  controller.createPaginationAndSearch = () => {
+    // ELEMENTS
+    const $search = $('.search input')
+    const $beforePage = $('.before-page')
+    const $beforePageBlock = $('.before-page-block')
+    const $nextPage = $('.next-page')
+    const $nextPageBlock = $('.next-page-block')
+
+    // VARS TO PAGINATE
+    let page = 0
+    let qtsPokemons = 21
+
+    // NEXT LIST POKEMONS
+    $beforePage.addEventListener('click', (e) => {
+      page--
+      controller.listPokemons(qtsPokemons, qtsPokemons * page)
+      if (page === 0) {
+        $beforePage.setAttribute('style', 'opacity: .3;')
+        $beforePageBlock.setAttribute('style', 'display: block;')
+      }
+
+      if (page < 40) {
+        $nextPage.setAttribute('style', 'opacity: 1;')
+        $nextPageBlock.setAttribute('style', 'display: none;')
+      }
+    })
+
+    // NEXT LIST POKEMONS
+    $nextPage.addEventListener('click', (e) => {
+      page++
+      controller.listPokemons(qtsPokemons, qtsPokemons * page)
+      if (page > 0) {
+        $beforePage.setAttribute('style', 'opacity: 1;')
+        $beforePageBlock.setAttribute('style', 'display: none;')
+      }
+
+      if (page === 40) {
+        $nextPage.setAttribute('style', 'opacity: .3;')
+        $nextPageBlock.setAttribute('style', 'display: block;')
+      }
+    })
+
+    // SEARCH POKEMON FOR NAME
+    $search.addEventListener('keyup', (e) => {
+      if (e.code === 'Enter') {
+        controller.searchPokemon($search.value)
+        $search.value = ''
+      }
+    })
+  }
+
   controller.listPokemons = (limit, offset) => {
     $loadingListPokemons.style.display = 'block'
     PokemonsService.listPokemons(limit, offset).then((pokemons) => (
@@ -58,6 +109,9 @@ module.exports = () => {
         } else {
           $loadingPokemonDetail.style.display = 'none'
           $pokemonNotFound.style.display = 'block'
+          setTimeout(() => {
+            $pokemonNotFound.style.display = 'none'
+          }, 3000)
           return true
         }
       })
@@ -77,6 +131,9 @@ module.exports = () => {
           } else {
             $loadingPokemonDetail.style.display = 'none'
             $pokemonNotFound.style.display = 'block'
+            setTimeout(() => {
+              $pokemonNotFound.style.display = 'none'
+            }, 3000)
             return true
           }
         })

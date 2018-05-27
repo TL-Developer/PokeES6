@@ -64,13 +64,28 @@ h1, h2, h3, h4, h5 {
   font-family: $font4;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+ul.list {
+  @extend %no-bullets;
+}
+
 .input-text {
   margin: 0;
-  padding: 3px;
-  @include border-radius(5px, 5px, 5px, 5px);
-  @include border(0, 0, 0, 0, solid, transparent);
+  padding: 1%;
+  @include border-radius(0px, 5px, 5px, 0px);
+  @include border(1px, 1px, 1px, 1px, solid, $gray2);
   box-shadow: none;
-  height: 50px;
+  height: 20px;
+  width: 98%;
+  position: relative;
+  z-index: 5;
 }
 
 .letter-spacing-5 {
