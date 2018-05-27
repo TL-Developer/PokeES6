@@ -1,3 +1,5 @@
+import * as CcpokemonList from '../../components/PokemonList'
+import * as CcpokemonDetails from '../../components/PokemonDetails'
 import { $ } from '../helpers/$'
 
 export function RenderListPokemons (pokemons) {
@@ -8,17 +10,9 @@ export function RenderListPokemons (pokemons) {
 
   $loadingListPokemons.style.display = 'none'
 
-  const regexGetIdPokemon = /(?<=\/)(\d+)/g
-  let renderTemplate = (url, name) => (`
-      <li class="hover-grow pokemon fx-calc text-center cursor-pointer" id="${url.match(regexGetIdPokemon)}">
-        <p>${name}</p>
-      </li>
-    `
-  )
-
   $listPokemons.innerHTML = ''
   pokemons.filter((pokemon, index) => {
-    $listPokemons.insertAdjacentHTML('beforeend', renderTemplate(pokemon.url, pokemon.name))
+    $listPokemons.insertAdjacentHTML('beforeend', CcpokemonList.render(pokemon.url, pokemon.name))
   })
 
   // CLICK AT POKEMON FOR DETAILS
@@ -45,39 +39,7 @@ export function RenderPokemon (pokemon) {
   $loading.style.display = 'none'
   $changePokemon.style.display = 'none'
 
-  const uriPokemonArt = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other-sprites/official-artwork/'
-  let renderTemplate = () => (
-    `
-      <div class="row pokemon-name">
-        <h1 class="roll text-color-pallet-4 animated text-center m-bottom20 font-pokemon-hollow">${pokemon.name}</h1>
-      </div>
-
-      <div class="row text-center pull-left pokemon-art">
-        <picture>
-          <img class="flipH animated width-40" src="${uriPokemonArt + pokemon.id + '.png'}" alt="pokemon-front">
-        </picture>
-      </div>
-
-      <div class="row pull-left pokemon-card">
-        <picture class="flipH animated text-center pull-left">
-          <img class="width-100" src="${pokemon.sprites.front_default || './static/no-pokemon.jpg'}" alt="pokemon-front">
-        </picture>
-
-        <picture class="flipH animated text-center pull-right">
-          <img class="width-100" src="${pokemon.sprites.back_default || './static/no-pokemon.jpg'}" alt="pokemon-back">
-        </picture>
-      </div>
-
-      <div class="row text-center m-top10 pull-left">
-        <h2><small>Type:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.types[0].type.name}</i></h2>
-        <h2><small>Weight:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.weight}</i></h2>
-        <h2><small>Experience:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.base_experience}</i></h2>
-        <h2><small>Height:</small> <i class="font-pokemon-hollow text-color-pallet-2">${pokemon.height}</i></h2>
-      </div>
-    `
-  )
-
-  $pokemon.innerHTML = renderTemplate()
+  $pokemon.innerHTML = CcpokemonDetails.render(pokemon)
 
   // HANLDE ERROR IMAGE ART POKEMON
   $('.pokemon-art picture img').onerror = function () {
