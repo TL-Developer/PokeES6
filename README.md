@@ -15,6 +15,8 @@ Create a search to list a pokemon
 ## What do I use?
 
 ### HTML
+- Favicon
+- Meta tags
 - Semantic HTML5
 
 ### CSS
@@ -22,6 +24,8 @@ Create a search to list a pokemon
 - Responsive design
 - Fonts imports
 - Media queries
+- Transform
+- Transition
 - Keyframes
 - Animations
 - SMACSS
@@ -30,6 +34,7 @@ Create a search to list a pokemon
 - Variables
 - Mixins
 - Placeholders
+- Includes and Extend
 - Aninhaments
 
 ### UX and UI
@@ -41,11 +46,14 @@ Create a search to list a pokemon
 - MVC
 - Modules
 - Imports and Exports
+- Regex
+- Every
+- IIFE
+- Spread operator
 - Async await
 - Promisses
 - Fetch
 - Template string
-- Spred operator
 - Callbacks
 - Events mouse
 - Events keyboard
@@ -63,6 +71,7 @@ Create a search to list a pokemon
 - Standard
 - Babel
 - Node
+- Polyfill
 
 ### Offline
 - IndexDB (Localforage)

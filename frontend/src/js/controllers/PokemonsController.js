@@ -67,7 +67,19 @@ module.exports = () => {
           throw new Error(err)
         }
 
-        // console.log(pokemons)
+        [...pokemons].every((pokemon, index) => {
+          if (pokemon.name === query) {
+            PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
+              RenderPokemon(pokemon)
+            ))
+            $pokemonNotFound.style.display = 'none'
+            return false
+          } else {
+            $loadingPokemonDetail.style.display = 'none'
+            $pokemonNotFound.style.display = 'block'
+            return true
+          }
+        })
       })
     })
   }
