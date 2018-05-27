@@ -12,7 +12,7 @@ Create a page to list details of selected pokemon
 Create a search to list a pokemon
 > **API Documentation:**  [Pokeapi](https://pokeapi.co/)
 
-## What do I use?
+## What am I using?
 
 ### HTML
 - Favicon
