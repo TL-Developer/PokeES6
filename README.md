@@ -9,7 +9,66 @@
 
 Create a page to list all pokemons <br />
 Create a page to list details of selected pokemon
+Create a search to list a pokemon
 > **API Documentation:**  [Pokeapi](https://pokeapi.co/)
+
+## What do I use?
+
+### HTML
+- Semantic HTML5
+
+### CSS
+- Flexbox
+- Responsive design
+- Fonts imports
+- Media queries
+- Keyframes
+- Animations
+- SMACSS
+- Sass
+- Imports
+- Variables
+- Mixins
+- Placeholders
+- Aninhaments
+
+### UX and UI
+- Photoshop
+- Collor pallete
+- Dafont
+
+### JS
+- MVC
+- Modules
+- Imports and Exports
+- Async await
+- Promisses
+- Fetch
+- Template string
+- Spred operator
+- Callbacks
+- Events mouse
+- Events keyboard
+
+### Test
+- Mocha
+- Chai
+
+### Server
+- NodeJS
+- Express
+
+### Build and Development
+- Webpack
+- Standard
+- Babel
+- Node
+
+### Offline
+- IndexDB (Localforage)
+
+### API Rest
+- [Pokemon API](https://pokeapi.co/)
 
 
 Quick install
@@ -35,7 +94,7 @@ To build to production
 
     > $ npm run prod or yarn prod
   > $ git push heroku master
-  Avaliable at https://arcane-woodland-81813.herokuapp.com/#/search
+  Avaliable at https://pokelima.herokuapp.com/
 
 ## Running tests with Mocha and Chai
 
