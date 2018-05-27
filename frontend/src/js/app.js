@@ -1,3 +1,4 @@
+import { Routers } from './Routes/index'
 import PokemonsController from './controllers/PokemonsController'
 import { $ } from './helpers/$'
 
@@ -15,6 +16,7 @@ import { $ } from './helpers/$'
 
   // LIST POKEMONS
   PokemonsController().listPokemons()
+  Routers()
 
   // NEXT LIST POKEMONS
   $beforePage.addEventListener('click', (e) => {

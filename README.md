@@ -48,6 +48,11 @@ Create a search to list a pokemon
 - Imports and Exports
 - Regex
 - Every
+- forEach
+- Filter
+- Array.from()
+- Routes
+- Window.history
 - IIFE
 - Spread operator
 - Async await

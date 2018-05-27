@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>.:: PokeES6 Next ::.</title>
-  <link rel="stylesheet" href="dist/style.css">
-  <link rel="shortcut icon" type="image/png" href="/static/pokeball.png"/>
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <div class="pull-left m-top10 m-left10">
-      <h3>.:: PokeLima ::.</h3>
-    </div>
-    <button route="/home">Home</button>
-    <button route="/about">About</button>
-    <div class="search pull-right m-right10 m-top10">
-      <input type="text" placeholder="Search pokemon for name...">
-    </div>
-  </header>
+import PokemonsController from '../js/controllers/PokemonsController'
 
-
-  <!-- CONTENT LIST POKEMONS-->
-  <section class="VIEW m-bottom20">
+export function Home () {
+  setTimeout(() => {
+    PokemonsController().listPokemons()
+  }, 10)
+  return `
     <article class="list-pokemons m-top10 pull-left">
       <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Choose your pokemon</h1>
       <div class="loading">
@@ -64,13 +46,13 @@
         <h2 class="text-center heart animated infinite text-color-pallet-3">Pokemon não encontrado</h2>
       </section>
     </article>
-  </section>
+  `
+}
 
-  <!-- FOOTER -->
-  <footer>
-    <h5>By: Tiago Lima</h5>
-  </footer>
-
-  <script src="./dist/app.bundle.js"></script>
-</body>
-</html>
+export function About () {
+  return `
+    <article class="list-pokemons m-top10 pull-left">
+      <h1>About the challenge</h1>
+    </article>
+  `
+}
