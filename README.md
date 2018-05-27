@@ -70,6 +70,7 @@ Create a search to list a pokemon
 ### Server
 - NodeJS
 - Express
+- Router
 
 ### Build and Development
 - Webpack

@@ -1,5 +1,6 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const extractPlugin = new ExtractTextPlugin({
   filename: 'style.css'
@@ -14,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js',
-    publicPath: '/dist'
+    publicPath: './'
   },
   module: {
     rules: [{
@@ -41,11 +42,18 @@ module.exports = {
       })
     },
     {
+      test: /\.html$/,
+      use: extractPlugin.extract({
+        use: ['html-loader']
+      })
+    },
+    {
       test: /\.(png|woff|woff2|eot|ttf|svg)$/,
       loader: 'url-loader?limit=100000'
     }]
   },
   plugins: [
-    extractPlugin
+    extractPlugin,
+    new HtmlWebpackPlugin()
   ]
 }

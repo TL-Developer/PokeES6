@@ -1,79 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>.:: PokeES6 Next ::.</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" type="image/png" href="/static/pokeball.png"/>
-</head>
-<body>
-  <!-- HEADER -->
-  <header>
-    <div class="pull-left m-top10 m-left10">
-      <h3>.:: PokeLima ::.</h3>
-    </div>
-    <ul class="list pull-right">
-      <li route="/home">Home</li>
-      <li route="/about">About</li>
-    </ul>
-  </header>
-
-  <!-- CONTENT LIST POKEMONS-->
-  <section class="VIEW m-bottom20">
-    <article class="list-pokemons m-top10 pull-left">
-      <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Choose your pokemon</h1>
-      <div class="loading">
-        <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
-      </div>
-      <ul class="fx fx-just-center fx-wrap fx-just-baseline fx-box-sizing-border-box"></ul>
-
-      <div class="row arrows">
-        <div class="before-page-block"></div>
-        <img class="pull-left m-left20 arrow-left-an cursor-pointer before-page" src="static/arrow-left.png" alt="next">
-
-        <div class="next-page-block"></div>
-        <img class="pull-right m-right20 arrow-right-an cursor-pointer next-page" src="static/arrow-right.png" alt="next">
-      </div>
-    </article>
-
-    <!-- CONTENT POKEMON DETAIL -->
-    <article class="box-pokemon-detail pull-right m-right20 m-top10">
-      <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Details of your pokemon</h1>
-
-      <div class="row">
-        <div class="search m-bottom5">
-          <input class="input-text font-pokemon-solid letter-spacing-2 text-color-gray-2" type="text" placeholder="Search pokemon for name...">
-        </div>
-        <section class="pokemon-not-found m-bottom5 row">
-          <h6 class="text-center heart animated infinite no-padding no-margin text-color-pallet-3">Pokemon não encontrado</h6>
-        </section>
-      </div>
-
-      <section class="pokemon-detail pull-left">
-        <div class="change-view-card cursor-pointer">
-          <p class="text-color-blue">Change view pokemon</p>
-        </div>
-
-        <div class="loading">
-          <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
-        </div>
-
-        <div class="choose-pokemon">
-          <h1 class="text-center font-pokemon-solid text-color-gray-2">Chosse your pokemon</h1>
-          <img class="character" src="static/ash.png" alt="Ash">
-        </div>
-
-        <div class="render-pokemon"></div>
-      </section>
-    </article>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <h5>By: Tiago Lima</h5>
-  </footer>
-
-  <script src="app.bundle.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pokemon</title>
+  <link href="./style.css" rel="stylesheet"></head>
+  <body>
+  <script type="text/javascript" src="./app.bundle.js"></script></body>
 </html>
