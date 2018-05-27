@@ -101,7 +101,7 @@ To run in dev mode and build css keep watching for changed files
 
 To build to production
 
-    > $ npm run prod or yarn prod
+    > $ npm run build
   > $ git push heroku master
   Avaliable at https://pokelima.herokuapp.com/
 
