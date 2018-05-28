@@ -253,7 +253,7 @@
   -o-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-ul.list, .list-pokemons ul {
+ul.list, .autocomplete-results, .list-pokemons ul {
   list-style: none;
   margin-top: 0;
   margin-left: 0;
@@ -572,6 +572,9 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0; }
 
+.relative {
+  position: relative; }
+
 .text-center {
   text-align: center; }
 
@@ -737,6 +740,27 @@ h1, h2, h3, h4, h5 {
 
 .row {
   width: 100%; }
+
+.autocomplete-results {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background: #db4242;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-height: 1500%;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+  .autocomplete-results li {
+    color: #fff;
+    padding: 2%;
+    margin: 2%; }
+    .autocomplete-results li:hover {
+      background: #ff6969; }
 
 .alert-info {
   position: absolute;
