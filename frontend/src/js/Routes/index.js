@@ -36,10 +36,6 @@ export function Routers () {
       routes: 'Home'
     },
     {
-      path: '/home',
-      routes: 'Home'
-    },
-    {
       path: '/about',
       routes: 'About'
     }
