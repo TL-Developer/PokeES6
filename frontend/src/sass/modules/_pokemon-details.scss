@@ -21,8 +21,11 @@
     .change-view-card {
       display: none;
       position: absolute;
-      right: 3%;
-      bottom: 0;
+      right: 1%;
+      bottom: 1%;
+      @include border-radius(5px, 5px, 5px, 5px);
+      background: $pallet-2;
+      padding: 0% 4%;
     }
 
     .choose-pokemon {

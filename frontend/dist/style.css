@@ -893,8 +893,14 @@ footer {
     .box-pokemon-detail .pokemon-detail .change-view-card {
       display: none;
       position: absolute;
-      right: 3%;
-      bottom: 0; }
+      right: 1%;
+      bottom: 1%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background: #ff6969;
+      padding: 0% 4%; }
     .box-pokemon-detail .pokemon-detail .choose-pokemon {
       width: 90%;
       height: 100%;
