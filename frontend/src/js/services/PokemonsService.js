@@ -4,11 +4,25 @@ const uriPokemon = 'https://pokeapi.co/api/v2/pokemon'
 const uriPokemonType = 'https://pokeapi.co/api/v2/ability'
 const localforage = require('localforage')
 
-export async function listAllPokemons () {
-  const response = await fetch(`${uriAllPokemon}`)
-  const data = await response.json()
-  localforage.setItem('allPokemons', data.results)
-  return data.results
+export function listAllPokemons (callback) {
+  const fetchPokemons = async () => {
+    const response = await fetch(`${uriAllPokemon}`)
+    const data = await response.json()
+    localforage.setItem('allPokemons', data.results)
+    return callback(data.results)
+  }
+
+  // IF THERE ARE POKEMONS OFFLINE
+  localforage.getItem('allPokemons', (err, pokemons) => {
+    if (err) {
+      throw new Error(err)
+    }
+    if (pokemons) {
+      return callback(pokemons)
+    } else {
+      fetchPokemons()
+    }
+  })
 }
 
 export async function listPokemons (limit, offset) {

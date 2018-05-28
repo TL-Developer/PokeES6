@@ -98,51 +98,23 @@ module.exports = () => {
     $loadingPokemonDetail.style.display = 'block'
     $pokemonNotFound.style.display = 'none'
 
-    // CONSULTING IN INDEXB
-    localforage.getItem('allPokemons', (err, pokemons) => {
-      if (err) {
-        throw new Error(err)
-      }
-
-      if (pokemons) {
-        // GET POKEMONS OFFLINE
-        [...pokemons].every((pokemon, index) => {
-          if (pokemon.name === query) {
-            PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
-              RenderPokemon(pokemon)
-            ))
+    PokemonsService.listAllPokemons((pokemons) => {
+      [...pokemons].every((pokemon, index) => {
+        if (pokemon.name === query) {
+          PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
+            RenderPokemon(pokemon)
+          ))
+          $pokemonNotFound.style.display = 'none'
+          return false
+        } else {
+          $loadingPokemonDetail.style.display = 'none'
+          $pokemonNotFound.style.display = 'block'
+          setTimeout(() => {
             $pokemonNotFound.style.display = 'none'
-            return false
-          } else {
-            $loadingPokemonDetail.style.display = 'none'
-            $pokemonNotFound.style.display = 'block'
-            setTimeout(() => {
-              $pokemonNotFound.style.display = 'none'
-            }, 3000)
-            return true
-          }
-        })
-      } else {
-        // GET POKEMONS ONLINE
-        PokemonsService.listAllPokemons().then((pokemons) => (
-          [...pokemons].every((pokemon, index) => {
-            if (pokemon.name === query) {
-              PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
-                RenderPokemon(pokemon)
-              ))
-              $pokemonNotFound.style.display = 'none'
-              return false
-            } else {
-              $loadingPokemonDetail.style.display = 'none'
-              $pokemonNotFound.style.display = 'block'
-              setTimeout(() => {
-                $pokemonNotFound.style.display = 'none'
-              }, 3000)
-              return true
-            }
-          })
-        ))
-      }
+          }, 3000)
+          return true
+        }
+      })
     })
   }
 
