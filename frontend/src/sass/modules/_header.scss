@@ -7,14 +7,20 @@ header {
   h3 {
     text-align: center;
     color: $white;
-    padding-top: 1%;
+    padding-top: 1.5%;
+  }
+
+  .app-title {
+    position: absolute;
+    right: 5%;
+    top: 1.5%;
   }
 
   ul.list {
     height: 100%;
 
     li {
-      padding: 12% 15% 8% 8%;
+      padding: 1.4% 2%;
       float: left;
       height: 100%;
       cursor: pointer;

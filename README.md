@@ -119,9 +119,9 @@ To build to production
 
 ### Ability endpoint
 
-> Search pokemon by ability
+> Search pokemons
 
-Endpoint: http://pokeapi.co/api/v2/ability/{ability} <br />
+Endpoint: http://pokeapi.co/api/v2/pokemon/ <br />
 
 method: GET <br />
 response :
@@ -130,39 +130,29 @@ body:
 ```
 
 {
-  "effect_changes": [],
-  "name": "battle-armor",
-  "generation": {
-    "url": "https://pokeapi.co/api/v2/generation/3/",
-    "name": "generation-iii"
-  },
-  "pokemon": [
+  "count": 949,
+  "previous": null,
+  "results": [
     {
-      "slot": 3,
-      "is_hidden": true,
-      "pokemon": {
-        "url": "https://pokeapi.co/api/v2/pokemon/104/",
-        "name": "cubone"
-      }
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "name": "bulbasaur"
     },
     {
-      "slot": 3,
-      "is_hidden": true,
-      "pokemon": {
-        "url": "https://pokeapi.co/api/v2/pokemon/105/",
-        "name": "marowak"
-      }
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "name": "ivysaur"
     },
     {
-      "slot": 2,
-      "is_hidden": false,
-      "pokemon": {
-        "url": "https://pokeapi.co/api/v2/pokemon/140/",
-        "name": "kabuto"
-      }
-    }
-  ],
-  "is_main_series": true,
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "name": "venusaur"
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "name": "charmander"
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "name": "charmeleon"
+    },
   {...}
 }
 

@@ -57,8 +57,27 @@ export function Home () {
 
 export function About () {
   return `
-    <article class="list-pokemons m-top10 pull-left">
-      <h1>About the challenge</h1>
+    <article class="m-top20 m-left20">
+      <h2 class="text-color-pallet-2">## Aplicação</h2>
+      <ul>
+        <li>Criar uma página para listar todos os pokemons</li>
+        <li>Criar uma página para listar os detalhes de um pokemon selecionado</li>
+      </ul>
+      <h2 class="text-color-pallet-2">## O que será avaliado</h2>
+        <ul>
+          <li>consumo de api</li>
+          <li>responsive design</li>
+          <li>route management</li>
+          <li>componentes/classes em ES6</li>
+          <li>application build</li>
+          <li>Históricos de commits (standard commits)</li>
+        </ul>
+      <h2 class="text-color-pallet-2">## HTML</h2>
+      <p>Semântica e separação de components</p>
+      <h2 class="text-color-pallet-2">## Style</h2>
+      <p>Organização e reaproveitamento, padrão utilizado. (BEM, ATOMIC, SMACSS)</p>
+      <h2 class="text-color-pallet-2">## JS</h2>
+      <p>Reaproveitamento de código, conhecimento da linguagem ECMASCRIPT mínimo 2015</p>
     </article>
   `
 }
