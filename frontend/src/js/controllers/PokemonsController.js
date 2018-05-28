@@ -98,46 +98,53 @@ module.exports = () => {
 
     $loadingPokemonDetail.style.display = 'block'
     $pokemonNotFound.style.display = 'none'
-    PokemonsService.listAllPokemons().then((pokemons) => (
-      [...pokemons].every((pokemon, index) => {
-        if (pokemon.name === query) {
-          PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
-            RenderPokemon(pokemon)
-          ))
-          $pokemonNotFound.style.display = 'none'
-          return false
-        } else {
-          $loadingPokemonDetail.style.display = 'none'
-          $pokemonNotFound.style.display = 'block'
-          setTimeout(() => {
-            $pokemonNotFound.style.display = 'none'
-          }, 3000)
-          return true
-        }
-      })
-    )).catch(() => {
-      localforage.getItem('allPokemons', (err, pokemons) => {
-        if (err) {
-          throw new Error(err)
-        }
 
-        [...pokemons].every((pokemon, index) => {
-          if (pokemon.name === query) {
-            PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
-              RenderPokemon(pokemon)
-            ))
-            $pokemonNotFound.style.display = 'none'
-            return false
-          } else {
-            $loadingPokemonDetail.style.display = 'none'
-            $pokemonNotFound.style.display = 'block'
-            setTimeout(() => {
-              $pokemonNotFound.style.display = 'none'
-            }, 3000)
-            return true
+    // CONSULTING IN INDEXB
+    localforage.getItem('allPokemons', (err, pokemons) => {
+      if (pokemons) {
+        // GET POKEMONS OFFLINE
+        localforage.getItem('allPokemons', (err, pokemons) => {
+          if (err) {
+            throw new Error(err)
           }
+          [...pokemons].every((pokemon, index) => {
+            if (pokemon.name === query) {
+              PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
+                RenderPokemon(pokemon)
+              ))
+              $pokemonNotFound.style.display = 'none'
+              return false
+            } else {
+              $loadingPokemonDetail.style.display = 'none'
+              $pokemonNotFound.style.display = 'block'
+              setTimeout(() => {
+                $pokemonNotFound.style.display = 'none'
+              }, 3000)
+              return true
+            }
+          })
         })
-      })
+      } else {
+        // GET POKEMONS ONLINE
+        PokemonsService.listAllPokemons().then((pokemons) => (
+          [...pokemons].every((pokemon, index) => {
+            if (pokemon.name === query) {
+              PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
+                RenderPokemon(pokemon)
+              ))
+              $pokemonNotFound.style.display = 'none'
+              return false
+            } else {
+              $loadingPokemonDetail.style.display = 'none'
+              $pokemonNotFound.style.display = 'block'
+              setTimeout(() => {
+                $pokemonNotFound.style.display = 'none'
+              }, 3000)
+              return true
+            }
+          })
+        ))
+      }
     })
   }
 
