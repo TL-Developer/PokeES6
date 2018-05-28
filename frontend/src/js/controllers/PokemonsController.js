@@ -78,9 +78,12 @@ module.exports = () => {
   controller.getPokemon = (pokemonId) => {
     $pokemonNotFound.style.display = 'none'
     $loadingPokemonDetail.style.display = 'block'
-    PokemonsService.getPokemon(pokemonId).then((pokemon) => (
-      RenderPokemon(pokemon)
-    )).catch(() => {
+    PokemonsService.getPokemon(pokemonId).then((pokemon) => {
+      if (navigator.onLine) {
+        RenderPokemon(pokemon)
+      }
+    }).catch((err) => {
+      return err
       // IF NOT CONNECTION INTERNET, RETURN DATA LOCAL
       localforage.getItem(`pokemon${pokemonId}`, (err, pokemon) => {
         if (err) {

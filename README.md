@@ -44,6 +44,8 @@ Create a search to list a pokemon
 
 ### JS
 - MVC
+- Components
+- API Navigator Offline or Online
 - Modules
 - Imports and Exports
 - Regex

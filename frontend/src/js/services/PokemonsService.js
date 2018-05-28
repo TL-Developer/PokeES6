@@ -1,10 +1,15 @@
 import fetch from 'isomorphic-fetch'
-const uriAllPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=1000'
+import * as CcAlertInfo from '../../components/AlertInfo'
+const uriAllPokemon = 'https://pokeapi.co/api/v2/pokemon/?limit=840'
 const uriPokemon = 'https://pokeapi.co/api/v2/pokemon'
-const uriPokemonType = 'https://pokeapi.co/api/v2/ability'
 const localforage = require('localforage')
 
 export function listAllPokemons (callback) {
+  if (!navigator.onLine) {
+    return CcAlertInfo.render()
+  }
+  CcAlertInfo.destroy()
+
   const fetchPokemons = async () => {
     const response = await fetch(`${uriAllPokemon}`)
     const data = await response.json()
@@ -26,6 +31,11 @@ export function listAllPokemons (callback) {
 }
 
 export async function listPokemons (limit, offset) {
+  if (!navigator.onLine) {
+    return CcAlertInfo.render()
+  }
+  CcAlertInfo.destroy()
+
   const response = await fetch(`${uriPokemon}/?limit=${limit || '21'}&offset=${offset || '0'}`)
   const data = await response.json()
   localforage.setItem('pokemons', data.results)
@@ -33,14 +43,13 @@ export async function listPokemons (limit, offset) {
 }
 
 export async function getPokemon (pokemonId) {
+  if (!navigator.onLine) {
+    return CcAlertInfo.render()
+  }
+  CcAlertInfo.destroy()
+
   const response = await fetch(`${uriPokemon}/${pokemonId}`)
   const data = await response.json()
   localforage.setItem(`pokemon${pokemonId}`, data)
-  return data
-}
-
-export async function getPokemonAbility (pokemonId) {
-  const response = await fetch(`${uriPokemonType}/${pokemonId}`)
-  const data = await response.json()
   return data
 }
