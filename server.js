@@ -2,7 +2,7 @@ const express = require('express')
 
 const app = express()
 
-app.use(express.static('../frontend/dist'))
+app.use(express.static('./frontend/dist'))
 
 app.get('*', function(req, res){
   res.redirect('/')

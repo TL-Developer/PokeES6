@@ -1,0 +1,23 @@
+{
+  "name": "pokelima",
+  "version": "0.0.1",
+  "description": "Challenge Pokemon API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TL-Developer/PokeES6.git"
+  },
+  "author": "Tiago Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TL-Developer/PokeES6/issues"
+  },
+  "homepage": "https://github.com/TL-Developer/PokeES6#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
