@@ -19,6 +19,7 @@ export function RenderListPokemons (pokemons) {
   const $pokemons = $('.pokemon', 'all')
   $pokemons.forEach((pokemon) => {
     pokemon.addEventListener('click', (e) => {
+      window.body.scroll(0, 1000)
       if (e.target.id) {
         PokemonsController().getPokemon(e.target.id)
       } else {

@@ -54,6 +54,7 @@ module.exports = () => {
     // SEARCH POKEMON FOR NAME
     $search.addEventListener('keyup', (e) => {
       if (e.code === 'Enter') {
+        window.scroll(0, 1000)
         controller.searchPokemon($search.value)
         $search.value = ''
       }
