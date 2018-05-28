@@ -1,0 +1,23 @@
+.autocomplete-results {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 10;
+  @extend %no-bullets;
+  width: 100%;
+  background: $pallet-3;
+  @include border-radius(0, 0, 10px, 10px);
+  max-height: 1500%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  li {
+    color: $white;
+    padding: 2%;
+    margin: 2%;
+
+    &:hover {
+      background: $pallet-2;
+    }
+  }
+}

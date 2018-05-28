@@ -52,8 +52,58 @@ module.exports = () => {
     })
 
     // SEARCH POKEMON FOR NAME
+    let allPokemons = []
+    PokemonsService.listAllPokemons((pokemons) => {
+      allPokemons = pokemons
+    })
+
+    // functions
+    const autocomplete = (val) => {
+      let pokemonReturn = []
+
+      allPokemons.forEach((pokemon) => {
+        if (val === pokemon.name.slice(0, val.length)) {
+          pokemonReturn.push(pokemon.name)
+        }
+      })
+
+      return pokemonReturn
+    }
+
+    let $autocompleteResults = $('.autocomplete-results')
     $search.addEventListener('keyup', (e) => {
+      let inputVal = e.target.value
+      let pokemonToShow = []
+
+      if (inputVal.length > 0) {
+        $autocompleteResults.innerHTML = ''
+        pokemonToShow = autocomplete(inputVal)
+
+        pokemonToShow.forEach((pokemon) => {
+          $autocompleteResults.innerHTML += `<li class="autocompleted cursor-pointer">${pokemon}</li>`
+        })
+
+        $('.autocompleted', 'all').forEach(($elm) => {
+          $elm.addEventListener('click', (e) => {
+            $search.value = e.target.innerText
+            $search.focus()
+            pokemonToShow = []
+            $autocompleteResults.innerHTML = ''
+            window.scroll(0, 1000)
+            controller.searchPokemon($search.value)
+            $search.value = ''
+          })
+        })
+
+        $autocompleteResults.style.display = 'block'
+      } else {
+        pokemonToShow = []
+        $autocompleteResults.innerHTML = ''
+      }
+
       if (e.code === 'Enter') {
+        pokemonToShow = []
+        $autocompleteResults.innerHTML = ''
         window.scroll(0, 1000)
         controller.searchPokemon($search.value)
         $search.value = ''
