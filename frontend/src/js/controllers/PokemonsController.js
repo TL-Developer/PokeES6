@@ -66,7 +66,6 @@ module.exports = () => {
       RenderListPokemons(pokemons)
     )).catch(() => {
       // IF NOT CONNECTION INTERNET, RETURN DATA LOCAL
-      console.log('Sem conexão com a API, então segue os pokemons gravado local(indexDB)')
       localforage.getItem('pokemons', (err, pokemons) => {
         if (err) {
           throw new Error(err)
@@ -83,7 +82,6 @@ module.exports = () => {
       RenderPokemon(pokemon)
     )).catch(() => {
       // IF NOT CONNECTION INTERNET, RETURN DATA LOCAL
-      console.log('Sem conexão com a API, então segue o pokemon gravado local(indexDB)')
       localforage.getItem(`pokemon${pokemonId}`, (err, pokemon) => {
         if (err) {
           throw new Error(err)
@@ -95,6 +93,7 @@ module.exports = () => {
 
   controller.searchPokemon = (query) => {
     const regexGetIdPokemon = /(?<=\/)(\d+)/g
+    query = query.toLowerCase()
 
     $loadingPokemonDetail.style.display = 'block'
     $pokemonNotFound.style.display = 'none'

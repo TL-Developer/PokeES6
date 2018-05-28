@@ -31,6 +31,11 @@ header {
         background: $white;
         color: $pallet-3;
       }
+
+      &:hover {
+        @include border(0, 5px, 0px, 0, solid, $pallet-2);
+      }
     }
+
   }
 }
