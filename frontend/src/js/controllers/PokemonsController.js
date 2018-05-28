@@ -101,28 +101,27 @@ module.exports = () => {
 
     // CONSULTING IN INDEXB
     localforage.getItem('allPokemons', (err, pokemons) => {
+      if (err) {
+        throw new Error(err)
+      }
+
       if (pokemons) {
         // GET POKEMONS OFFLINE
-        localforage.getItem('allPokemons', (err, pokemons) => {
-          if (err) {
-            throw new Error(err)
-          }
-          [...pokemons].every((pokemon, index) => {
-            if (pokemon.name === query) {
-              PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
-                RenderPokemon(pokemon)
-              ))
+        [...pokemons].every((pokemon, index) => {
+          if (pokemon.name === query) {
+            PokemonsService.getPokemon(pokemon.url.match(regexGetIdPokemon)).then((pokemon) => (
+              RenderPokemon(pokemon)
+            ))
+            $pokemonNotFound.style.display = 'none'
+            return false
+          } else {
+            $loadingPokemonDetail.style.display = 'none'
+            $pokemonNotFound.style.display = 'block'
+            setTimeout(() => {
               $pokemonNotFound.style.display = 'none'
-              return false
-            } else {
-              $loadingPokemonDetail.style.display = 'none'
-              $pokemonNotFound.style.display = 'block'
-              setTimeout(() => {
-                $pokemonNotFound.style.display = 'none'
-              }, 3000)
-              return true
-            }
-          })
+            }, 3000)
+            return true
+          }
         })
       } else {
         // GET POKEMONS ONLINE
