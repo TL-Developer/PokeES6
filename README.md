@@ -111,7 +111,8 @@ To build to production
 
     > $ npm run build
   > $ git push heroku master
-  Avaliable at https://pokelima.herokuapp.com/
+
+Avaliable at [https://pokelima.herokuapp.com/](https://pokelima.herokuapp.com/)
 
 ## Running tests with Mocha and Chai
 
