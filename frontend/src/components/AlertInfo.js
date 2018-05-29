@@ -1,4 +1,4 @@
-const template = `
+export const template = `
   <div class="heart animated infinite text-center alert-info">
     <p class="text-color-white no-padding no-margin">Sem conexão com a internet :(</p>
   </div>

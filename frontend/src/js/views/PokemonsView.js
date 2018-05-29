@@ -12,7 +12,7 @@ export function RenderListPokemons (pokemons) {
 
   $listPokemons.innerHTML = ''
   pokemons.filter((pokemon, index) => {
-    $listPokemons.insertAdjacentHTML('beforeend', CcpokemonList.render(pokemon.url, pokemon.name))
+    CcpokemonList.renderPokemons(pokemon.url, pokemon.name)
   })
 
   // CLICK AT POKEMON FOR DETAILS
@@ -32,7 +32,6 @@ export function RenderListPokemons (pokemons) {
 }
 
 export function RenderPokemon (pokemon) {
-  const $pokemon = $('.pokemon-detail .render-pokemon')
   const $changePokemon = $('.choose-pokemon')
   const $loading = $('.pokemon-detail .loading')
   const $changeViewCard = $('.change-view-card')
@@ -40,7 +39,7 @@ export function RenderPokemon (pokemon) {
   $loading.style.display = 'none'
   $changePokemon.style.display = 'none'
 
-  $pokemon.innerHTML = CcpokemonDetails.render(pokemon)
+  CcpokemonDetails.renderPokemon(pokemon)
 
   // HANLDE ERROR IMAGE ART POKEMON
   $('.pokemon-art picture img').onerror = function () {

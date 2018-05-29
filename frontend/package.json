@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register",
+    "test-watch": "mocha --compilers js:babel-core/register --watch",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --output-public-path=/dist/"
   },
@@ -18,11 +19,13 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
     "css-loader": "^0.28.11",
     "es6-promise": "^4.2.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "isomorphic-fetch": "^2.2.1",
+    "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "standard": "^11.0.1",

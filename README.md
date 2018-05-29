@@ -117,10 +117,11 @@ Avaliable at [https://pokelima.herokuapp.com/](https://pokelima.herokuapp.com/)
 ## Running tests with Mocha and Chai
 
     > $ npm run test
+    > $ npm run test-watch
 
 ## Endpoints Documentation
 
-### Ability endpoint
+### Pokemons endpoint
 
 > Search pokemons
 
@@ -161,10 +162,9 @@ body:
 
 ```
 
-### Search Pokemon endpoint
+### Search Pokemon id endpoint
 
 > Search pokemon by id
-
 
 
 Endpoint: http://pokeapi.co/api/v2/pokemon/{idPokemon} <br />
