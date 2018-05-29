@@ -37,7 +37,7 @@ export function Home () {
       </div>
 
       <section class="pokemon-detail pull-left">
-        <div class="change-view-card cursor-pointer">
+        <div class="change-view-card cursor-pointer hover-grow">
           <p class="text-color-white font-pokemon-solid">ArtWork</p>
         </div>
 
