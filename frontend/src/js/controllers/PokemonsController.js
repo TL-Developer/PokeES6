@@ -73,7 +73,7 @@ module.exports = () => {
     let $autocompleteResults = $('.autocomplete-results')
     let pokemonToShow = []
 
-    $search.addEventListener('blur', (e) => {
+    document.body.addEventListener('click', (e) => {
       pokemonToShow = []
       $autocompleteResults.innerHTML = ''
       $search.value = ''
