@@ -21,7 +21,7 @@ export const template = `
       </div>
 
       <div class="loading">
-        <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
+        <img class="pokeball-loading animated infinite" src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="loading...">
       </div>
 
       <div class="choose-pokemon">
