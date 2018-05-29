@@ -9,7 +9,7 @@ export function Home () {
     <article class="list-pokemons m-top10 pull-left">
       <h1 class="text-center m-bottom20 font-pokemon-solid text-color-pallet-2 letter-spacing-3">Choose your pokemon</h1>
       <div class="loading">
-        <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
+        <img class="pokeball-loading animated infinite" src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="loading...">
       </div>
       <ul class="fx fx-just-center fx-wrap fx-just-baseline fx-box-sizing-border-box"></ul>
 
@@ -42,7 +42,7 @@ export function Home () {
         </div>
 
         <div class="loading">
-          <img class="pokeball-loading animated infinite" src="static/pokeball.png" alt="loading...">
+          <img class="pokeball-loading animated infinite" src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt="loading...">
         </div>
 
         <div class="choose-pokemon">
@@ -79,6 +79,8 @@ export function About () {
       <p>Organização e reaproveitamento, padrão utilizado. (BEM, ATOMIC, SMACSS)</p>
       <h2 class="text-color-pallet-2">## JS</h2>
       <p>Reaproveitamento de código, conhecimento da linguagem ECMASCRIPT mínimo 2015</p>
+      <h2 class="text-color-pallet-2">## Coverage</h2>
+      <p>Teste com mocha e chai</p>
     </article>
   `
 }
